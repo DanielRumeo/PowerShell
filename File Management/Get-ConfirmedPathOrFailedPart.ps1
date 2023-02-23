@@ -30,7 +30,7 @@
     $PathToItem
 
     )
-    Write-Output $PathToItem
+    
     $ErroredDir = $NULL
     $CTR = 0
     [String]$PathVar = $PathToItem
