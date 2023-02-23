@@ -21,6 +21,11 @@
 
       .EXAMPLE
       PS> .\Get-ConfirmedPathOrFailedPart.ps1 -PathToItem C:\Temp\Folder1\Folder2\TestItem.txt
+
+      .NOTES
+      NAME: Get-ConfirmedPathOrFailedPart.ps1
+      VERSION: 1.0
+      Author: Daniel Rumeo
     #>
 
     Param(
@@ -30,7 +35,7 @@
     $PathToItem
 
     )
-    
+    Write-Output $PathToItem
     $ErroredDir = $NULL
     $CTR = 0
     [String]$PathVar = $PathToItem
