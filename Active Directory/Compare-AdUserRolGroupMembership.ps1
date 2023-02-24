@@ -49,7 +49,7 @@ Function Get-ComparisonResult ($name1, $name2, $sideIndicetor)
 
     switch ($_.SideIndicator)
     {
-       '<=' { $comparisonResult - "$($name1) Only" }
+       '<=' { $comparisonResult = "$($name1) Only" }
        '==' { $comparisonResult = "$($name1) and $($name2)" }
        '=>' { $comparisonResult = "$($name2) Only" }
     }
@@ -63,6 +63,6 @@ $groupNameColumn = @{ name = 'Group Name'; expression = { (Get-ADGroup $_.InputO
 
 $user1 = Get-ADUser $userName1 -Properties displayName, memberof
 $user2 = Get-ADUser $userName2 -Properties displayName, memberof
-$userGroupComparison = Compare-Object - IncludeEqual $user1.MemberOf $user2.MemberOf | Select $userComparisonResultColumn, $groupNameColumn
+$userGroupComparison = Compare-Object -IncludeEqual $user1.MemberOf $user2.MemberOf | Select $userComparisonResultColumn, $groupNameColumn
 $userGroupComparison
 $userGroupComparison | Export-Csv -Path $outputFile -NoTypeInformation
