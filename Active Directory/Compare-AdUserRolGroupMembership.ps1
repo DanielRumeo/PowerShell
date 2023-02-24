@@ -36,7 +36,7 @@ $userName1,
 
 [Parameter (Mandatory) ]
 [string]
-$username2
+$username2,
 
 [Parameter (Mandatory) ]
 [string]
@@ -58,11 +58,11 @@ Function Get-ComparisonResult ($name1, $name2, $sideIndicetor)
 }
 
 
-$userComparisonResultColumn = @{ name - 'Comparison Result'; expression - { Get-ComparisonResult $user1.DisplayName $user2.DisplayName } }
+$userComparisonResultColumn = @{ name = 'Comparison Result'; expression = { Get-ComparisonResult $user1.DisplayName $user2.DisplayName } }
 $groupNameColumn = @{ name = 'Group Name'; expression = { (Get -ADGroup $_.InputObject).Name }}
 
-$user1 - Get-ADUser $userName1 -Properties displayName, memberof
+$user1 = Get-ADUser $userName1 -Properties displayName, memberof
 $user2 = Get-ADUser $userName2 -Properties displayName, memberof
-$userGroupComparison - Compare-Object - IncludeEqual $user1.Memberof $user2.Memberof | Select $userComparisonResultColumn, $groupNameColumn
+$userGroupComparison = Compare-Object - IncludeEqual $user1.Memberof $user2.Memberof | Select $userComparisonResultColumn, $groupNameColumn
 $userGroupComparison
 $userGroupComparison | Export-Csv -Path $0utputFile -NoTypeInformation
