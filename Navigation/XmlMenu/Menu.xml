@@ -1,0 +1,49 @@
+<Menu>
+
+    <Item MenuPlacement = "Main" Name = "Virtualization" Function = "Set-Menu">
+        <Parameter>-MenuType "Virtualization" -SubMenu "Yes"</Parameter>
+    </Item>
+
+    <Item MenuPlacement = "Main" Name = "Active Directory" Function = "Set-Menu">
+        <Parameter>-MenuType "Active Directory" -SubMenu "Yes"</Parameter>
+    </Item>
+
+    <Item MenuPlacement = "Main" Name = "Quit" Function = "Set-Quit">
+        <Parameter>Param1</Parameter>
+    </Item>
+
+
+
+    <Item MenuPlacement = "Active Directory" Sub = "User" Name = "Item 1" Function = "Set-Output">
+        <Parameter>Param1</Parameter>
+    </Item>
+
+
+    <Item MenuPlacement = "Active Directory" Sub = "Group" Name = "Item 1" Function = "Set-Output">
+        <Parameter>Param1</Parameter>
+    </Item>
+
+    <Item MenuPlacement = "Active Directory" Name = "Quit" Function = "Set-Menu">
+        <Parameter>-MenuType "Main" -Submenu "NO"</Parameter>
+    </Item>
+
+
+
+    <Item MenuPlacement = "Virtualization" Sub = "Machine" Name = "Item 1" Function = "Set-Output">
+        <Parameter>Param1</Parameter>
+    </Item>
+
+
+    <Item MenuPlacement = "VIrtualization" Sub = "Machine" Name = "Item 3" Function = "Set-Output">
+        <Parameter>Param1</Parameter>
+    </Item>
+
+    <Item MenuPlacement = "Virtualization" Sub = "User" Name = "Item 2" Function = "Set-Output">
+        <Parameter>Param1</Parameter>
+    </Item>
+
+    <Item MenuPlacement = "Virtualization" Name = "Quit" Function = "Set-Menu">
+        <Parameter>-MenuType "Main" -Submenu "NO"</Parameter>
+    </Item>
+
+</Menu>

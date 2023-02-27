@@ -1,0 +1,19 @@
+﻿{"menu": [
+    {"name" : "Custom", "Function": "Get-ChildItem C:", "sub": null
+    },
+    {"name" : "Active Directory","Function": "O", "sub": [
+        {"name" : "Add User",        "Function": "Get-ChildItem C:",  "sub": null},
+        {"name" : "Remove User",     "Function": "Get-ChildItem C:","sub": null},
+        {"name" : "Generate Report", "Function": "Get-ChildItem C:","sub": null}
+    ]},
+    {"name": "Software Deployment",  "Function": "Get-ChildItem C:","sub": [
+        {"name" : "Install",         "Function": "Get-ChildItem C:","sub": null},
+        {"name" : "Remove",          "Function": "Get-ChildItem C:","sub": null}
+    ]},
+    {"name": "Virtualization","Function": "O", "sub": [
+        {"name" : "New VM",          "Function": "Get-ChildItem C:","sub": null},
+        {"name" : "Delete VM",       "Function": "Get-ChildItem C:","sub": null},
+        {"name" : "Generate Report", "Function": "Get-ChildItem C:","sub": null}
+    ]}
+]}
+
